@@ -1,0 +1,68 @@
+/*
+    And the "it's in 3D" step again brings some 3D typography - just for fun.
+    
+    Because we want to position <span> elements in 3D we set transform-style to
+    `preserve-3d` on the paragraph.
+    It is not needed by webkit browsers, but it is in Firefox. It's hard to say
+    which behaviour is correct as 3D transforms spec is not very clear about it.
+*/
+#its-in-3d p {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style:    preserve-3d; /* Y U need this Firefox?! */
+    -ms-transform-style:     preserve-3d;
+    -o-transform-style:      preserve-3d;
+    transform-style:         preserve-3d;
+}
+
+/*
+    Below we position each word separately along Z axis and we want it to transition
+    to default position in 0.5s when the step gets `present` class.
+    
+    Quite a simple idea, but lot's of styles and prefixes.
+*/
+#its-in-3d span,
+#its-in-3d b {
+    display: inline-block;
+    -webkit-transform: translateZ(40px);
+    -moz-transform:    translateZ(40px);
+    -ms-transform:     translateZ(40px);
+    -o-transform:      translateZ(40px);
+     transform:        translateZ(40px);
+            
+    -webkit-transition: 1s;
+    -moz-transition:    1s;
+    -ms-transition:     1s;
+    -o-transition:      1s;
+    transition:         1s;
+}
+
+#its-in-3d .evrything {
+    font-weight: bold;
+    -webkit-transform: translateZ(-40px);
+    -moz-transform:    translateZ(-40px);
+    -ms-transform:     translateZ(-40px);
+    -o-transform:      translateZ(-40px);
+    transform:         translateZ(-40px);
+}
+
+#its-in-3d .pipeline {
+    font-weight: bold;
+    -webkit-transform: translateZ(-40px);
+    -moz-transform:    translateZ(-40px);
+    -ms-transform:     translateZ(-40px);
+    -o-transform:      translateZ(-40px);
+    transform:         translateZ(-40px);
+}
+
+
+#its-in-3d.present span,
+#its-in-3d.present b {
+    -webkit-transform: translateZ(0px);
+    -moz-transform:    translateZ(0px);
+    -ms-transform:     translateZ(0px);
+    -o-transform:      translateZ(0px);
+    transform:         translateZ(0px);
+}
+h1, h2, h3, h4{
+    font-weight: bold;
+}
